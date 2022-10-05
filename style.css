@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+button {
+    flex: 1;
+}
+
+.double {
+    min-width: 150px;
+}
+
+.operator {
+    background-color: crimson;
+}
+
+.helper {
+    background-color: cornflowerblue;
+}
+
+.number {
+    background-color: burlywood;
+}
