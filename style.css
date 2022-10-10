@@ -18,6 +18,10 @@
     flex: 1;
 }
 
+.result {
+    justify-content: right;
+}
+
 button {
     flex: 1;
 }
