@@ -2,17 +2,20 @@ let firstNumber = null;
 let secondNumber = null;
 let operator = null;
 let result = 0;
+let displayValue = '0';
+
+const display = document.querySelector('.display');
 
 const clear = document.querySelector('.clear');
-const negate = document.querySelector('.negate');
+const negation = document.querySelector('.negation');
 const percent = document.querySelector('.percent');
 
-const divide = document.querySelector('.divide');
-const multiply = document.querySelector('.multiply');
-const minus = document.querySelector('.minus');
-const plus = document.querySelector('.plus');
+const division = document.querySelector('.division');
+const multiplication = document.querySelector('.multiplication');
+const subtraction = document.querySelector('.subtraction');
+const addition = document.querySelector('.addition');
 const point = document.querySelector('.point');
-const equal = document.querySelector('.equal');
+const equation = document.querySelector('.equation');
 
 const zero = document.querySelector('.zero');
 const one = document.querySelector('.one');
@@ -60,3 +63,93 @@ function operate(operator, firstNumber, secondNumber) {
         }
     }
 }
+
+display.textContent = displayValue;
+
+zero.addEventListener('click', () => {
+    if (display.textContent != '0') {
+        displayValue = displayValue.concat('0');
+        display.textContent = displayValue;
+    }
+})
+
+one.addEventListener('click', () => {
+    if (display.textContent == '0') {
+        displayValue = '1';
+    } else {
+        displayValue = displayValue.concat('1');
+    }
+    display.textContent = displayValue;
+})
+
+two.addEventListener('click', () => {
+    if (display.textContent == '0') {
+        displayValue = '2';
+    } else {
+        displayValue = displayValue.concat('2');
+    }
+    display.textContent = displayValue;
+})
+
+three.addEventListener('click', () => {
+    if (display.textContent == '0') {
+        displayValue = '3';
+    } else {
+        displayValue = displayValue.concat('3');
+    }
+    display.textContent = displayValue;
+})
+
+four.addEventListener('click', () => {
+    if (display.textContent == '0') {
+        displayValue = '4';
+    } else {
+        displayValue = displayValue.concat('4');
+    }
+    display.textContent = displayValue;
+})
+
+five.addEventListener('click', () => {
+    if (display.textContent == '0') {
+        displayValue = '5';
+    } else {
+        displayValue = displayValue.concat('5');
+    }
+    display.textContent = displayValue;
+})
+
+six.addEventListener('click', () => {
+    if (display.textContent == '0') {
+        displayValue = '6';
+    } else {
+        displayValue = displayValue.concat('6');
+    }
+    display.textContent = displayValue;
+})
+
+seven.addEventListener('click', () => {
+    if (display.textContent == '0') {
+        displayValue = '7';
+    } else {
+        displayValue = displayValue.concat('7');
+    }
+    display.textContent = displayValue;
+})
+
+eight.addEventListener('click', () => {
+    if (display.textContent == '0') {
+        displayValue = '8';
+    } else {
+        displayValue = displayValue.concat('8');
+    }
+    display.textContent = displayValue;
+})
+
+nine.addEventListener('click', () => {
+    if (display.textContent == '0') {
+        displayValue = '9';
+    } else {
+        displayValue = displayValue.concat('9');
+    }
+    display.textContent = displayValue;
+})
