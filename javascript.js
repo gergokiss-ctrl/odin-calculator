@@ -153,3 +153,10 @@ nine.addEventListener('click', () => {
     }
     display.textContent = displayValue;
 })
+
+point.addEventListener('click', () => {
+    if (displayValue.includes(".") == false) {
+        displayValue = displayValue.concat('.');
+        display.textContent = displayValue;
+    }
+})
