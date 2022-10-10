@@ -3,28 +3,27 @@ let secondNumber = null;
 let operator = null;
 let result = 0;
 
-// console.log('test1');
-// console.log(firstNumber);
-// console.log(secondNumber);
-// console.log(operator);
-// console.log(result);
+const clear = document.querySelector('.clear');
+const negate = document.querySelector('.negate');
+const percent = document.querySelector('.percent');
 
-// firstNumber = 420;
-// secondNumber = 69;
-// operator = '-';
+const divide = document.querySelector('.divide');
+const multiply = document.querySelector('.multiply');
+const minus = document.querySelector('.minus');
+const plus = document.querySelector('.plus');
+const point = document.querySelector('.point');
+const equal = document.querySelector('.equal');
 
-// console.log('test2');
-// console.log(firstNumber);
-// console.log(secondNumber);
-// console.log(operator);
-// console.log(result);
-
-// operate(operator, firstNumber, secondNumber);
-// console.log('test3');
-// console.log(firstNumber);
-// console.log(secondNumber);
-// console.log(operator);
-// console.log(result);
+const zero = document.querySelector('.zero');
+const one = document.querySelector('.one');
+const two = document.querySelector('.two');
+const three = document.querySelector('.three');
+const four = document.querySelector('.four');
+const five = document.querySelector('.five');
+const six = document.querySelector('.six');
+const seven = document.querySelector('.seven');
+const eight = document.querySelector('.eight');
+const nine = document.querySelector('.nine');
 
 function add(firstNumber, secondNumber) {
     return firstNumber + secondNumber;
