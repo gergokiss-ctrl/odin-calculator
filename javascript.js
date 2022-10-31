@@ -137,6 +137,10 @@ equation.addEventListener('click', () => {
     operator = null;
 })
 
+negation.addEventListener('click', () => {
+    display.textContent = Number(display.textContent) * -1;
+})
+
 zero.addEventListener('click', () => {
     if (clearContent === 1) {
         display.textContent = "0";
