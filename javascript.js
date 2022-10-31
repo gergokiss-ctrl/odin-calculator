@@ -60,6 +60,10 @@ function operate() {
         }
 
         if (operator === '/') {
+            if (secondNum == 0) {
+                alert("Division by zero is prohibited!");
+                return;
+            }
             display.textContent = div(firstNum, secondNum);
         }
     }
@@ -135,6 +139,7 @@ equation.addEventListener('click', () => {
     firstNum = null;
     secondNum = null;
     operator = null;
+    clearContent = 1;
 })
 
 negation.addEventListener('click', () => {
