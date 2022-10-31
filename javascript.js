@@ -141,6 +141,10 @@ negation.addEventListener('click', () => {
     display.textContent = Number(display.textContent) * -1;
 })
 
+percent.addEventListener('click', () => {
+    display.textContent = Number(display.textContent) / 100;
+})
+
 zero.addEventListener('click', () => {
     if (clearContent === 1) {
         display.textContent = "0";
