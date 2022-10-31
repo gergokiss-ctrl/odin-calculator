@@ -145,6 +145,14 @@ percent.addEventListener('click', () => {
     display.textContent = Number(display.textContent) / 100;
 })
 
+clear.addEventListener('click', () => {
+    display.textContent = 0;
+    firstNum = null;
+    secondNum = null;
+    operator = null;
+    clearContent = 0;
+})
+
 zero.addEventListener('click', () => {
     if (clearContent === 1) {
         display.textContent = "0";
