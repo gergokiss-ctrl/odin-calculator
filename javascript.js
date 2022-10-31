@@ -1,20 +1,13 @@
-let firstNumber = null;
-let secondNumber = null;
-let operator = null;
-let result = 0;
-let displayValue = '0';
-
 const display = document.querySelector('.display');
 
 const clear = document.querySelector('.clear');
 const negation = document.querySelector('.negation');
 const percent = document.querySelector('.percent');
 
-const division = document.querySelector('.division');
-const multiplication = document.querySelector('.multiplication');
-const subtraction = document.querySelector('.subtraction');
 const addition = document.querySelector('.addition');
-const point = document.querySelector('.point');
+const subtraction = document.querySelector('.subtraction');
+const multiplication = document.querySelector('.multiplication');
+const division = document.querySelector('.division');
 const equation = document.querySelector('.equation');
 
 const zero = document.querySelector('.zero');
@@ -27,136 +20,222 @@ const six = document.querySelector('.six');
 const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
+const point = document.querySelector('.point');
 
-function add(firstNumber, secondNumber) {
-    return firstNumber + secondNumber;
+display.textContent = 0;
+
+let firstNum = null;
+let secondNum = null;
+let operator = null;
+let clearContent = 0;
+
+function add(n1, n2) {
+    return n1 + n2;
 }
 
-function subtract(firstNumber, secondNumber) {
-    return firstNumber - secondNumber;
+function sub(n1, n2) {
+    return n1 - n2;
 }
 
-function multiply(firstNumber, secondNumber) {
-    return firstNumber * secondNumber;
+function mul(n1, n2) {
+    return n1 * n2;
 }
 
-function divide(firstNumber, secondNumber) {
-    return firstNumber / secondNumber;
+function div(n1, n2) {
+    return n1 / n2;
 }
 
-function operate(operator, firstNumber, secondNumber) {
-    if ((firstNumber && secondNumber && operator) != null) {
-        if (operator == '+') {
-            result = add(firstNumber, secondNumber);
+function operate() {
+    if ((firstNum && secondNum && operator) != null) {
+        if (operator === '+') {
+            display.textContent = add(firstNum, secondNum);
         }
 
-        if (operator == '-') {
-            result = subtract(firstNumber, secondNumber);
+        if (operator === '-') {
+            display.textContent = sub(firstNum, secondNum);
         }
 
-        if (operator == '*') {
-            result = multiply(firstNumber, secondNumber);
+        if (operator === '*') {
+            display.textContent = mul(firstNum, secondNum);
         }
 
-        if (operator == '/') {
-            result = divide(firstNumber, secondNumber);
+        if (operator === '/') {
+            display.textContent = div(firstNum, secondNum);
         }
     }
 }
 
-display.textContent = displayValue;
+addition.addEventListener('click', () => {
+    if (firstNum != null && secondNum === null) {
+        secondNum = Number(display.textContent);
+    }
+
+    if (firstNum === null) {
+        firstNum = Number(display.textContent);
+    }
+
+    operate();
+    operator = '+';
+    firstNum = Number(display.textContent);
+    secondNum = null;
+    clearContent = 1;
+})
+
+subtraction.addEventListener('click', () => {
+    if (firstNum != null && secondNum === null) {
+        secondNum = Number(display.textContent);
+    }
+
+    if (firstNum === null) {
+        firstNum = Number(display.textContent);
+    }
+
+    operate();
+    operator = '-';
+    firstNum = Number(display.textContent);
+    secondNum = null;
+    clearContent = 1;
+})
+
+multiplication.addEventListener('click', () => {
+    if (firstNum != null && secondNum === null) {
+        secondNum = Number(display.textContent);
+    }
+
+    if (firstNum === null) {
+        firstNum = Number(display.textContent);
+    }
+
+    operate();
+    operator = '*';
+    firstNum = Number(display.textContent);
+    secondNum = null;
+    clearContent = 1;
+})
+
+division.addEventListener('click', () => {
+    if (firstNum != null && secondNum === null) {
+        secondNum = Number(display.textContent);
+    }
+
+    if (firstNum === null) {
+        firstNum = Number(display.textContent);
+    }
+
+    operate();
+    operator = '/';
+    firstNum = Number(display.textContent);
+    secondNum = null;
+    clearContent = 1;
+})
+
+equation.addEventListener('click', () => {
+    secondNum = Number(display.textContent);
+    operate();
+    firstNum = null;
+    secondNum = null;
+    operator = null;
+})
 
 zero.addEventListener('click', () => {
-    if (display.textContent != '0') {
-        displayValue = displayValue.concat('0');
-        display.textContent = displayValue;
+    if (clearContent === 1) {
+        display.textContent = "0";
+        clearContent = 0;
+    }
+
+    if (display.textContent != "0") {
+        display.textContent = display.textContent.concat(0);
     }
 })
 
 one.addEventListener('click', () => {
-    if (display.textContent == '0') {
-        displayValue = '1';
+    if (display.textContent === "0" || clearContent === 1) {
+        display.textContent = 1;
+        clearContent = 0;
     } else {
-        displayValue = displayValue.concat('1');
+        display.textContent = display.textContent.concat(1);
     }
-    display.textContent = displayValue;
 })
 
 two.addEventListener('click', () => {
-    if (display.textContent == '0') {
-        displayValue = '2';
+    if (display.textContent === "0" || clearContent === 1) {
+        display.textContent = 2;
+        clearContent = 0;
     } else {
-        displayValue = displayValue.concat('2');
+        display.textContent = display.textContent.concat(2);
     }
-    display.textContent = displayValue;
 })
 
 three.addEventListener('click', () => {
-    if (display.textContent == '0') {
-        displayValue = '3';
+    if (display.textContent === "0" || clearContent === 1) {
+        display.textContent = 3;
+        clearContent = 0;
     } else {
-        displayValue = displayValue.concat('3');
+        display.textContent = display.textContent.concat(3);
     }
-    display.textContent = displayValue;
 })
 
 four.addEventListener('click', () => {
-    if (display.textContent == '0') {
-        displayValue = '4';
+    if (display.textContent === "0" || clearContent === 1) {
+        display.textContent = 4;
+        clearContent = 0;
     } else {
-        displayValue = displayValue.concat('4');
+        display.textContent = display.textContent.concat(4);
     }
-    display.textContent = displayValue;
 })
 
 five.addEventListener('click', () => {
-    if (display.textContent == '0') {
-        displayValue = '5';
+    if (display.textContent === "0" || clearContent === 1) {
+        display.textContent = 5;
+        clearContent = 0;
     } else {
-        displayValue = displayValue.concat('5');
+        display.textContent = display.textContent.concat(5);
     }
-    display.textContent = displayValue;
 })
 
 six.addEventListener('click', () => {
-    if (display.textContent == '0') {
-        displayValue = '6';
+    if (display.textContent === "0" || clearContent === 1) {
+        display.textContent = 6;
+        clearContent = 0;
     } else {
-        displayValue = displayValue.concat('6');
+        display.textContent = display.textContent.concat(6);
     }
-    display.textContent = displayValue;
 })
 
 seven.addEventListener('click', () => {
-    if (display.textContent == '0') {
-        displayValue = '7';
+    if (display.textContent === "0" || clearContent === 1) {
+        display.textContent = 7;
+        clearContent = 0;
     } else {
-        displayValue = displayValue.concat('7');
+        display.textContent = display.textContent.concat(7);
     }
-    display.textContent = displayValue;
 })
 
 eight.addEventListener('click', () => {
-    if (display.textContent == '0') {
-        displayValue = '8';
+    if (display.textContent === "0" || clearContent === 1) {
+        display.textContent = 8;
+        clearContent = 0;
     } else {
-        displayValue = displayValue.concat('8');
+        display.textContent = display.textContent.concat(8);
     }
-    display.textContent = displayValue;
 })
 
 nine.addEventListener('click', () => {
-    if (display.textContent == '0') {
-        displayValue = '9';
+    if (display.textContent === "0" || clearContent === 1) {
+        display.textContent = 9;
+        clearContent = 0;
     } else {
-        displayValue = displayValue.concat('9');
+        display.textContent = display.textContent.concat(9);
     }
-    display.textContent = displayValue;
 })
 
 point.addEventListener('click', () => {
-    if (displayValue.includes(".") == false) {
-        displayValue = displayValue.concat('.');
-        display.textContent = displayValue;
+    if (clearContent === 1) {
+        display.textContent = "0.";
+        clearContent = 0;
+    }
+
+    if (display.textContent.includes(".") === false) {
+        display.textContent = display.textContent.concat(".");
     }
 })
